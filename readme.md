@@ -1,4 +1,4 @@
-# Prompt.Kit
+# PromptKit
 
 Stop searching old chats for the prompt that worked.
 
