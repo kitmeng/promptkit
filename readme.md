@@ -1,53 +1,47 @@
-# Prompt.Kit
+# prompt.kit
 
-Stop searching old chats for the prompt that worked.
+You wrote the perfect prompt. It's somewhere in one of your 47 chats.
 
-Prompt.Kit keeps your reusable AI instructions close at hand. Save the way you like an email rewritten, a brief sharpened, or an idea challenged. Then type `/q` in a supported text field, choose your prompt, and keep writing.
+Keep it in prompt.kit instead.
 
-Works in Chromium-based browsers, including Chrome, Edge, Brave, and Dia.
+Save the prompts worth repeating. Give each one a shortcut. Type `/q` in a supported website text field, pick your prompt, and keep going. No digging through chat history. No copy-paste commute.
 
-## Save once. Reuse wherever you work.
+## Your words, on repeat
 
-**Save your instructions**  
-Give each prompt a shortcut and a short description so you can recognise it later.
+Keep writing instructions, favourite prompts, and recurring briefs in one library. Group them into categories. Find them by search or shortcut. Insert with your keyboard or a click. prompt.kit fills the field. You decide when to send.
 
-**Keep them organised**  
-Group prompts into categories such as Writing, Research, or Visual.
+## Start with your own prompts
 
-**Use them without switching tabs**  
-Type `/q` to search your library, or start typing a saved shortcut. Select a prompt to insert its instructions. You stay in control of editing and sending.
+A new installation starts with an empty library. Open `/q` in a supported text field, go to **Library**, and create your first prompt. Return to **Search** to find and insert it.
 
-## Quick start
+The current local build is **v0.10.1**. Its interface has **Search**, **Library**, and **Sync** views. It does not use the older V8 toolbar manager.
 
-1. Open Prompt.Kit's browser toolbar menu and choose **Open prompt manager**.
-2. Choose **New prompt**, give it a shortcut and instructions, then create it.
-3. In a supported text field, type `/q`, search, use ↑/↓ to highlight a prompt, and press Enter to insert it.
+## Local first. GitHub if you want it.
 
-The manager's first-use tour explains the main actions. Replay it from Manager settings. GitHub is optional; you can create and insert prompts without connecting an account.
+Use your library offline without signing in. Under **Sync**, choose **Download backup** to export a JSON file or **Add from file** to import one. Import can add prompts or replace the local library after review.
 
-## Keep a copy of your library
+Connect your own GitHub repository for optional backup and sync. Choose a private repository to keep your prompts private. Public repositories expose your prompts and their Git history. GitHub access applies to repository contents, not just the library file.
 
-Export your prompts as a JSON file for backup or sharing, and import them into another installation.
+In V10.1, sync runs when you start it. Deleting a prompt locally does not automatically delete it from GitHub. Disconnecting keeps your local prompts and does not erase GitHub history.
 
-For optional sync across browsers, connect a GitHub repository you control. Your library stays available locally when you’re offline.
+## Where it works
 
-## About Prompt.Kit
+prompt.kit runs in supported website text fields in Chromium-based browsers. Browser-internal pages and some site editors block extensions. Compatibility with a particular editor or browser must be checked rather than assumed.
 
-Prompt.Kit is a personal tool: you build and use your own prompt library. A fresh installation starts empty, and GitHub is optional.
+No ads. No third-party analytics.
 
-This repository is the public home for product information and the privacy policy. It is not a shared sync destination. If you enable GitHub sync, connect a repository you control; use a private repository to keep your prompts private.
+## About this repository
 
-## Documentation
+This is the public home for product documentation and the privacy policy. It is not a shared prompt library or a sync destination. Keep your own library in a repository you control.
 
 | File | Purpose |
-|---|---|
-| [readme.md](readme.md) | Product overview and quick start |
-| [privacy.md](privacy.md) | Public privacy policy |
-| [docs/PRD.md](docs/PRD.md) | Current V8 requirements and outstanding checks |
-| [docs/design.md](docs/design.md) | Visual system and interaction guidance |
+| --- | --- |
+| [docs/PRD.md](docs/PRD.md) | V10.1 requirements, implementation scope, and checks still needed |
+| [docs/design.md](docs/design.md) | V10.1 visual system and interaction guidance |
+| [privacy.md](privacy.md) | Privacy policy |
 
-The current local development build is **v0.8.0**. Publication is paused. Build folders, design assets and historical documentation archives remain local; this public repository contains product documentation and the privacy policy.
+The current 0.10.1 store package is saved as an unpublished draft. The existing published, unlisted version is 0.8.12. Documentation changes do not submit or publish an extension release.
 
-## Privacy
+## Privacy and support
 
-[Privacy policy](privacy.md) · Contact: kidm3ng@gmail.com
+[Privacy policy](privacy.md). Contact: [kidm3ng@gmail.com](mailto:kidm3ng@gmail.com).

@@ -1,26 +1,26 @@
-# Privacy Policy for Prompt.Kit
+# Privacy Policy for prompt.kit
 
-Last updated: 9 November 2026.
+Last updated: 18 November 2026.
 
-Prompt.Kit is a browser extension maintained by Kit Meng for saving, organising, and inserting reusable prompts. This policy describes the v0.8.0 extension’s data handling.
+prompt.kit is a browser extension maintained by Kit Meng for saving, organising, and inserting reusable prompts. This policy covers the library, insertion, backup, recovery, and optional GitHub sync features. Storage details below distinguish the current v0.10.1 build from older installations where relevant.
 
 ## Information stored on your device
 
-Prompt.Kit stores your prompts, titles and descriptions, categories, shortcuts, variables, preferences, onboarding state, and recovery copies in your browser profile. It also stores local prompt-use counts and last-used times to support the library experience. Prompts may contain personal information you choose to save.
+prompt.kit stores your prompts, descriptions, categories, shortcuts, library preferences, and recovery copies in your browser profile. Older versions may also retain variable metadata and onboarding state. It also stores local prompt-use counts and last-used times to support the library experience. Prompts may contain personal information you choose to save.
 
-Prompt.Kit does not operate a developer-hosted service to receive your library. It does not include advertising, third-party analytics, or remote crash reporting. Local prompt-use counts and last-used times are not included in the GitHub sync library.
+prompt.kit does not operate a developer-hosted service to receive your library. It does not include advertising, third-party analytics, or remote crash reporting. Local prompt-use counts and last-used times are not included in the GitHub sync library.
 
 ## Website access and insertion
 
-Prompt.Kit runs on websites to recognise shortcuts in supported text fields and insert a selected prompt. It processes editable text locally for these features. Supported fields include text and search inputs, text areas, and rich-text editors. Password-type inputs are excluded; do not save passwords or other secrets in prompts.
+prompt.kit runs on websites to recognise shortcuts in supported text fields and insert a selected prompt. It processes editable text locally for these features. Supported fields include text and search inputs, text areas, and rich-text editors. Password-type inputs are excluded; do not save passwords or other secrets in prompts.
 
-Surrounding website text and browsing history are not included in GitHub sync uploads. When you insert a prompt into a website, that website can access the inserted text and handles it under its own policies. Prompt.Kit does not control what the receiving website does with that text.
+Surrounding website text and browsing history are not included in GitHub sync uploads. When you insert a prompt into a website, that website can access the inserted text and handles it under its own policies. prompt.kit does not control what the receiving website does with that text.
 
 ## Optional GitHub sync
 
-You can use the local library without connecting GitHub. If you enable sync, Prompt.Kit communicates with GitHub to authenticate you, identify repositories available to the app, and read and write the library in the repository you select. GitHub receives network information such as your IP address when the extension makes these requests.
+You can use the local library without connecting GitHub. If you enable sync, prompt.kit communicates with GitHub to authenticate you, identify repositories available to the app, and read and write the library in the repository you select. GitHub receives network information such as your IP address when the extension makes these requests.
 
-The synced library contains prompt content and metadata, categories, and deletion records used to reconcile changes across installations. It is stored as `prompt-kit/library.json`. GitHub sign-in tokens and connection state are stored locally in extension storage and are not included in this library file. Tokens are sent to GitHub as needed for authentication and API access.
+The synced library contains prompt content and metadata, categories, and deletion records used to reconcile changes across installations. It is stored as `prompt-kit/library.json`. GitHub sign-in tokens and connection state are stored locally in extension storage and are not included in this library file. The v0.10.1 build holds credentials and connection state in session storage, which the browser clears when the browser session ends. Older versions may retain connection state between sessions. Tokens are sent to GitHub as needed for authentication and API access.
 
 The GitHub App, `promptkit-app`, can read and write repository contents in repositories you authorise. Select only repositories you intend to use for sync. Repository access is governed by your GitHub settings.
 
@@ -28,7 +28,7 @@ A public repository makes its library contents and accessible Git history readab
 
 ## Sharing and use
 
-Prompt.Kit uses data to provide the library, insertion, import/export, recovery, and optional sync features. The maintainer does not sell extension user data, use it for advertising, or use it to determine creditworthiness. If you enable sync, your library is transferred to GitHub; if your repository is public, other people can read and copy it. Exported files are stored wherever you choose to save or share them.
+prompt.kit uses data to provide the library, insertion, import/export, recovery, and optional sync features. The maintainer does not sell extension user data, use it for advertising, or use it to determine creditworthiness. If you enable sync, your library is transferred to GitHub; if your repository is public, other people can read and copy it. Exported files are stored wherever you choose to save or share them.
 
 ## Retention and deletion
 
@@ -40,11 +40,11 @@ Deleting a prompt from the active library does not erase earlier GitHub commits 
 
 ## This policy website
 
-This policy is published in the public Prompt.Kit repository on GitHub. GitHub may process visitor information under its privacy statement. This policy page does not add analytics or advertising scripts.
+This policy is published in the public prompt.kit repository on GitHub. GitHub may process visitor information under its privacy statement. This policy page does not add analytics or advertising scripts.
 
 ## Changes
 
-This page will be updated when Prompt.Kit’s data practices change. The date above identifies the latest revision.
+This page will be updated when prompt.kit’s data practices change. The date above identifies the latest revision.
 
 ## Contact
 

@@ -1,66 +1,60 @@
-# Prompt.Kit — Design implementation context
+# prompt.kit design context
 
-## Register
+Build: v0.10.1. Updated: 18 November 2026.
 
-product
+This document follows the current Search, Library, and Sync interface. It replaces the V8 toolbar-manager guidance. [Product requirements](PRD.md) owns behavior and acceptance. This file owns presentation.
 
-## Purpose and sources
+## Identity and content
 
-Design guidance for the current v0.8.0 build, updated 9 November 2026. [PRD](PRD.md) owns features, behavioral contracts and outstanding acceptance. This file owns appearance and interaction styling, not a second requirements backlog.
+Use `prompt.kit` in public product copy. Keep repository names, GitHub App identifiers, library paths, and historical version identifiers unchanged.
 
-Local design source: `1Design/design.pen`. Local references: `1Design/references/forpeople-style-guide-ref.md` and `1Design/atomic-design-workflow.md`. Design assets and these reference files are not published in the documentation repository. Preserve the approved base design; refine consistency and feedback rather than introducing a new aesthetic.
+Start with an empty library. Search and Library should explain the next action without filling the interface with invented prompts. Store images show the empty state. User-authored instructions are content, not decoration, and must never be copied from a live library into promotional assets.
 
-## Foundations
+## Typography
 
-| Token or rule | Current direction |
-|---|---|
-| UI and display type | Locally bundled Instrument Sans, weights 400–700 |
-| Shortcuts/technical text | Geist Mono |
-| Canvas | `#F6F6F6` |
-| Module surface | `#EEEEEE` |
-| Ink | `#211A16` |
-| Muted text | `#6F6862` |
-| Lines | `#DDD6CF` |
-| Yellow accent/selection | `#FFC400`; retain full color rather than lightening the panel fill |
-| Error | `#C94B40` with explanatory text |
-| Primary/secondary controls | 40px and 32px standard action heights; fields and category rows have their own geometry |
+Current CSS defines six shared sizes. Values below are before the overlay's 80% scale.
 
-Instrument Sans supersedes earlier Season typography. Both runtime font families retain their bundled license notices. Reuse current runtime colors for GitHub's blue action/healthy-state treatment; do not introduce unrelated new colors.
+| Token | Value | Purpose |
+| --- | --- | --- |
+| `--pk-type-meta` | `.75rem` | Metadata and compact hints |
+| `--pk-type-body` | `.8125rem` | Controls and supporting copy |
+| `--pk-type-reading` | `.9375rem` | Reading text |
+| `--pk-type-section` | `1rem` | Section labels |
+| `--pk-type-prompt` | `1.125rem` | Prompt titles |
+| `--pk-type-heading` | `1.3125rem` | Headings |
+
+Geist is the main UI family. Geist Mono supplies shortcut and technical text. Inter is also bundled and declared in the stylesheet. Keep bundled font and vendor license files with the runtime. Instrument Sans and Season are not the current V10.1 type system.
+
+## Surfaces and colour
+
+Primary, secondary, and tertiary neutral text are `#171717`, `#525252`, and `#626262`. The standalone canvas is `#ececec`; the main panel is `#f5f5f5`. Rounded neutral surfaces and restrained reactive rims establish hierarchy.
+
+Routine primary actions use black. Secondary controls remain neutral. GitHub actions and the healthy Sync dot use selective blue, with `--pk-sync-blue` set to `#2563eb`. Keep category colours and semantic feedback separate from general navigation. Destructive final actions retain a clear danger treatment.
 
 ## Composition
 
-Manager: two-pane shell with a shared light-grey header, at least 72px tall on desktop. Left header contains brand and New prompt; right header contains breadcrumb, sync status/action and Settings. Keep the external Close control clear of header actions. Wrap at narrow widths without overlap.
+Search, Library, and Sync share navigation and a Close control. The overlay is displayed at 80% scale. Keep hit areas and text readable after scaling rather than judging only raw CSS sizes.
 
-Library: a sticky 50px search field close to, but distinct from, the accordions. Keep category titles/counts/arrows aligned. Expanded headers are white; selected prompt rows are yellow. Category tags belong in All prompts/flat search. Add category follows the final accordion as a dashed unfilled row. The category options icon sits beside its title and appears on hover/focus, remaining discoverable on touch.
+Search has one query field, a result list, contextual empty-state guidance, and keyboard hints. An empty library offers a first-prompt action. Search results contain only the user's saved instructions.
 
-Content: shortcut title, optional short description, then the instructions surface. Its internal header groups Prompt, character count and a borderless copy icon at top right. Keep metadata inside the surface without crowding the text. Empty/new/editing states use the same layout vocabulary.
+Library keeps browsing and editing visible together where space permits. At narrow widths, preserve an active editor and provide explicit navigation back to prompts. Keep category controls within category context. Dropdowns fit their labels within viewport bounds, reveal the selected item on opening, and use the shared type, scrollbar, focus, and cursor styles.
 
-Picker: brand at top-left above search, then the result list and a compact keyboard-guidance footer with Manage prompts. Use a 24px mark/16px wordmark; manager branding remains larger (32px mark/22px wordmark on desktop). Match row typography, category badge proportions, warm surfaces and description spacing across both surfaces.
+Sync separates the local-device library from optional GitHub storage. Keep connection setup, preview, replacement, recovery, and disconnect flows concise. Dates and counts identify backups. Replacement warnings must state what will be lost and whether GitHub changes.
 
-Settings: a compact gear-anchored popover with a pointer aligned to the gear, a 20px inset and a subtle storage overview with 14px inner padding. Keep browser/GitHub endpoints unboxed within that overview. Use a blue outline and label for the quiet Sync now action. Header and diagram share a labelled health symbol; color supplements its shape and text. Lead with the storage/sync explanation; put less frequent sync controls inside progressive disclosure. Library files and Getting started remain separate groups. Keep the pointer aligned with the gear, dismiss accessibly and fit/scroll within the viewport.
+## Interaction and motion
 
-## Components and states
+Keep selected state, pointer hover, and keyboard focus distinct. Magnetic movement must preserve stable labels and hit targets. Reactive rims and rainbow feedback must not obscure text or become the only signal of state.
 
-Both New prompt actions use the same black pill, white text, plus icon, 40px height and 14px text. Keep Edit/Create/Save actions within the existing primary-action system. Delete retains the normal danger treatment. GitHub actions retain their blue recognition and clear text states.
+Use motion to explain a transition, not to delay insertion or acknowledge an operation that has not completed. Repeated search input should not replay entry animation. Reduced Motion and coarse-pointer behavior retain usable static controls and visible feedback.
 
-Use the same typography before/after accordion expansion. Input focus outlines follow the field's rounded geometry and must not be clipped. Category-entry labels, fields and confirm/cancel icons share consistent insets and vertical alignment.
+Search must retain focus without passing typing to the host page. Closing should return the user to their writing context. Match Close contrast to its surrounding page and keep it visible on both light and dark backgrounds.
 
-Distinguish selected prompt, pointer hover and keyboard focus. Do not make category selection yellow when nested prompt selection is also yellow. Use named icon actions, visible focus and concise contextual feedback. Status cannot depend solely on color or motion.
+## Accessibility and verification
 
-## Motion and pointer behavior
+Use named controls, visible focus, readable contrast, keyboard operation, and clear error text. Status cannot depend only on colour or animation. Preserve content and controls under increased zoom, long labels, and narrow viewports.
 
-Picker entry is restrained (140ms), dismissal quicker (100ms). Placement updates do not replay entry. Pointer-color feedback can transition briefly; keyboard highlight stays immediate. Search does not animate every result per keystroke, and insertion never waits for motion.
+Verify the actual extension, not just a static mockup. Empty-library store screenshots must be captured with an isolated profile and no GitHub credentials or user library. Do not infer accessibility certification or universal editor compatibility from screenshots.
 
-Manager motion uses short fades/translations and position reconciliation to explain reveals and list movement. Dragging should expose the destination, settling into the new position; acknowledgments follow actual copy/save/sync success. Sync motion runs while work is unresolved, then communicates success, review or error truthfully. Do not animate idle status as a new successful operation.
+## Local owning files
 
-The PHI Lab-inspired magnetic surface uses a small approach zone and bounded surface movement while labels and hit targets stay fixed. Filled actions retain their fill; quiet actions form a neutral surface. Hide the native cursor only over enabled magnetic controls on a fine pointer, restoring it on exit.
-
-Exceptions: Settings contents and Delete prompt retain normal static buttons and visible native cursors. Prompt rows, accordion headings and navigation tabs are outside magnetic behavior. The header gear, copy icon and appropriate action buttons retain the effect.
-
-Reduced Motion removes spatial movement and unnecessary animation while preserving state feedback and functionality. Coarse pointers retain usable static targets. All motion remains interruptible and must not steal focus, replay indefinitely or cause layout jumps. The PRD tracks incomplete motion acceptance; these rules do not claim every transition is implemented or verified.
-
-## Responsive and accessibility review
-
-Preserve readable text, long-shortcut truncation, consistent alignment and viewport fitting. Library/Editor pane changes retain navigation context. Errors, confirmations and action feedback must appear in the active pane. Keep focus visible and return it to the appropriate trigger after popover dismissal.
-
-Use existing components/tokens before adding variants. Do not claim a complete dark theme, native Apple rendering or accessibility certification from a design reference. Validate the actual browser output at desktop and narrow widths.
+`3Builds/promptkit-v0.10.1/ui.css`, `sync-approved-ui.css`, and `preview-palette.css` define the current styling. `index.html`, `ui.js`, and the Sync UI modules define the current components. Older V8 design files and screenshots are historical references, not instructions to restore the old interface.
